@@ -4,7 +4,7 @@
   "description": "First commit",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only api/src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js"
   },
@@ -20,11 +20,13 @@
   },
   "homepage": "https://github.com/franSborges/Merchant-Journey-Tracker#readme",
   "dependencies": {
+    "@prisma/client": "^7.0.1",
     "express": "^5.1.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.5",
     "@types/node": "^24.10.1",
+    "prisma": "^7.0.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
   }
