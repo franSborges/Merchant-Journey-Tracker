@@ -6,9 +6,16 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  output   = "../api/src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+model Merchant {
+  id          String    @id @default(uuid())
+  name        String
+  email       String?   @unique
+  createdAt   DateTime  @default(now())
 }
