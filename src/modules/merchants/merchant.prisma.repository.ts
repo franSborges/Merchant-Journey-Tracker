@@ -4,7 +4,6 @@ import { Merchant } from "./merchant.entity";
 import { IMerchantRepository } from "./merchant.repository";
 
 
-
 export class MerchantPrismaRepository implements IMerchantRepository {
     async create(data: CreateMerchantDTO): Promise<Merchant> {
         const merchant = await prisma.merchant.create({
