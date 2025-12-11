@@ -17,6 +17,6 @@ datasource db {
 model Merchant {
   id          String    @id @default(uuid())
   name        String
-  email       String?   @unique
+  email       String   @unique
   createdAt   DateTime  @default(now())
 }

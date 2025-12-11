@@ -1,10 +1,11 @@
-import { prisma } from "../../config/database";
-import { CreateMerchantDTO } from "./dto/create-merchant.dto";
-import { Merchant } from "./merchant.entity";
-import { IMerchantRepository } from "./merchant.repository";
+import { prisma } from "../../../config/database";
+import { CreateMerchantDTO } from "../dto/create-merchant.dto";
+import { Merchant } from "../merchant.entity";
+import { IMerchantRepository } from "../repository/merchant.repository";
 
 
 export class MerchantPrismaRepository implements IMerchantRepository {
+
     async create(data: CreateMerchantDTO): Promise<Merchant> {
         const merchant = await prisma.merchant.create({
             data: {
@@ -17,9 +18,14 @@ export class MerchantPrismaRepository implements IMerchantRepository {
     }
 
     findById(id: string): Promise<Merchant | null> {
-        throw new Error("Method not implemented.");
+
+        return prisma.merchant.findUnique({
+            where: { id },
+        })
+    
     }
     findAll(): Promise<Merchant[]> {
-        throw new Error("Method not implemented.");
+
+      return prisma.merchant.findMany()
     }
 }
