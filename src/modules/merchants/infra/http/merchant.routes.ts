@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { MerchantPrismaRepository } from "./repository/merchant.prisma.repository";
-import { MerchantService } from './service/merchant.service';
+import { MerchantPrismaRepository } from "./../../infra/prisma_/merchant.prisma.repository";
+import { MerchantService } from './../../application/services/merchant.service';
 import { MerchantController } from "./controller/merchant.controller";
 
 const merchantRouter = Router();

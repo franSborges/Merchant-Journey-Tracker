@@ -1,6 +1,6 @@
 import { CreateMerchantDTO } from '../dto/create-merchant.dto';
-import { Merchant } from '../merchant.entity';
-import { IMerchantRepository } from '../repository/merchant.repository';
+import { Merchant } from '../../domain/entities/merchant.entity';
+import { IMerchantRepository } from '../../domain/repositories/merchant.repository';
 
 export class MerchantService {
    constructor(private merchantRepository: IMerchantRepository) {}

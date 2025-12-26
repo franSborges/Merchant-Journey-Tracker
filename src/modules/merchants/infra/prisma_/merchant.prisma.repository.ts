@@ -1,7 +1,7 @@
-import { prisma } from "../../../config/database";
-import { CreateMerchantDTO } from "../dto/create-merchant.dto";
-import { Merchant } from "../merchant.entity";
-import { IMerchantRepository } from "../repository/merchant.repository";
+import { prisma } from "../../../../shared/config/database";
+import { CreateMerchantDTO } from "../../application/dto/create-merchant.dto";
+import { Merchant } from "../../domain/entities/merchant.entity";
+import { IMerchantRepository } from "../../domain/repositories/merchant.repository";
 
 
 export class MerchantPrismaRepository implements IMerchantRepository {
@@ -18,14 +18,14 @@ export class MerchantPrismaRepository implements IMerchantRepository {
     }
 
     findById(id: string): Promise<Merchant | null> {
-
         return prisma.merchant.findUnique({
             where: { id },
         })
     
     }
-    findAll(): Promise<Merchant[]> {
 
+
+    findAll(): Promise<Merchant[]> {
       return prisma.merchant.findMany()
     }
 }

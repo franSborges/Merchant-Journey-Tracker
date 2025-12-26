@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { merchantRouter } from "./../../modules/merchants/merchant.routes";
+import { merchantRouter } from "../../../modules/merchants/infra/http/merchant.routes";
 
 const routes = Router();
 
