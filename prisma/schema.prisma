@@ -14,9 +14,32 @@ datasource db {
   url = env("DATABASE_URL")
 }
 
+enum EventType {
+  MERCHANT_SIGNED_UP
+  FIRST_SALE_COMPLETED
+  REQUESTED_CREDIT
+  CHURNED
+}
+
 model Merchant {
   id          String    @id @default(uuid())
   name        String
-  email       String   @unique
+  email       String    @unique
   createdAt   DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+
+  events Event[]
+}
+
+model Event {
+  id          String @id @default(uuid())
+  merchant_id String
+  type        EventType
+  occurred_at DateTime
+  created_at  DateTime @default(now())
+  metadata    Json?
+
+  merchant Merchant  @relation(fields: [merchant_id], references: [id], onDelete: Restrict)
+
+  @@index([merchant_id])
 }
