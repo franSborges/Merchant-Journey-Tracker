@@ -1,4 +1,4 @@
-export interface CreateMerchantDTO {
+export interface MerchantDTO {
     name: string;
     email: string;
 }

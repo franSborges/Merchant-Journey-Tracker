@@ -1,4 +1,4 @@
-import { CreateMerchantDTO } from '../dto/create-merchant.dto';
+import { CreateMerchantDTO } from '../dto/merchant.dto';
 import { Merchant } from '../../domain/entities/merchant.entity';
 import { IMerchantRepository } from '../../domain/repositories/merchant.repository';
 

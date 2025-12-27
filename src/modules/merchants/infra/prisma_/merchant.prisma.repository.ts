@@ -1,5 +1,5 @@
 import { prisma } from "../../../../shared/config/database";
-import { CreateMerchantDTO } from "../../application/dto/create-merchant.dto";
+import { CreateMerchantDTO } from "../../application/dto/merchant.dto";
 import { Merchant } from "../../domain/entities/merchant.entity";
 import { IMerchantRepository } from "../../domain/repositories/merchant.repository";
 
